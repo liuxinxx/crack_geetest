@@ -26,7 +26,7 @@ CONFIG = {
 
 class Gsxt(object):
     """"""
-    
+
     def __init__(self, driver):
         """构造函数"""
         super(Gsxt, self).__init__()
@@ -130,7 +130,7 @@ class Gsxt(object):
             pass
 
         pass
-    
+
     def get_image(self, class_name):
         """
         下载并还原极验的验证图
@@ -219,7 +219,7 @@ class Gsxt(object):
             x_offset += im.size[0]
 
         return new_im
-    
+
     def get_diff_x(self, image1, image2):
         """
         计算验证图的缺口位置（x轴）
@@ -254,7 +254,7 @@ class Gsxt(object):
             if abs(pixel1[i] - pixel2[i]) >= 50:
                 return False
         return True
-    
+
     def get_track(self, x_offset):
         """
         根据缺口位置x_offset，仿照手动拖动滑块时的移动轨迹。
@@ -288,14 +288,14 @@ class Gsxt(object):
         self.logger.debug(u"计算出移动轨迹; %s", track)
         self.logger.debug(u"预计耗时: %s", total_time)
         return track
-    
+
     def simulate_drag(self, track):
         """
         根据移动轨迹，模拟拖动极验的验证滑块
         Args:
             track: 移动轨迹
         Returns:
-            
+
         """
         self.logger.debug(u"开始模拟拖动滑块")
 
@@ -345,6 +345,6 @@ def test():
 if __name__ == "__main__":
     logging.basicConfig(level=logging.WARNING, format=CONFIG['log_format'])
 
-    main()
+    # main()
 
-    #test()
+    test()
